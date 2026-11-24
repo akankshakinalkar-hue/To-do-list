@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #faf6f0;
+  --bg-surface: #fffdf9;
+  --bg-subtle: #f3ece1;
+  --bg-hover: #ece3d5;
+  --border-hairline: #e4dacb;
+  --border-strong: #d3c5b2;
+  --text-primary: #35302c;
+  --text-secondary: #6f665d;
+  --text-muted: #988e83;
+  --accent-primary: #8b735b;
+  --accent-primary-hover: #75604b;
+  --accent-soft: #ebe1d3;
+  --sage: #738d77;
+  --sage-soft: #e2ebe3;
+  --rose: #bf8084;
+  --rose-soft: #f5e3e4;
+  --peach: #cc8b65;
+  --peach-soft: #f6e6da;
+}
+
+@layer base {
+  html {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8 L15 8.2 L21.9 9 L16.8 13.7 L18.2 20.6 L12 17.1 L5.8 20.6 L7.2 13.7 L2.1 9 L9 8.2 Z' fill='%23FFE066' stroke='%2335302C' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='11.2' r='2.1' fill='%23FFFBE6'/%3E%3C/svg%3E") 12 2, auto;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  a,
+  button,
+  [role="button"],
+  select,
+  input[type="checkbox"],
+  input[type="date"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.6 L15.2 8.2 L22.2 9 L17 13.9 L18.4 20.9 L12 17.3 L5.6 20.9 L7 13.9 L1.8 9 L8.8 8.2 Z' fill='%23FFD15C' stroke='%2335302C' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='11.2' r='2.3' fill='%23FFFFFF'/%3E%3C/svg%3E") 12 2, pointer;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    cursor: text;
+  }
+}
+
+.cursor-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.6 L15.2 8.2 L22.2 9 L17 13.9 L18.4 20.9 L12 17.3 L5.6 20.9 L7 13.9 L1.8 9 L8.8 8.2 Z' fill='%23FFD15C' stroke='%2335302C' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='11.2' r='2.3' fill='%23FFFFFF'/%3E%3C/svg%3E") 12 2, pointer;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle warm scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Cute Mascot Animations (compositor-only transforms & opacity) */
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes mascotCoffeeTilt {
+  0%, 55%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-3px) rotate(-3.5deg);
+  }
+  40% {
+    transform: translateY(-2px) rotate(3deg);
+  }
+}
+
+@keyframes mascotSteamRise {
+  0% {
+    transform: translateY(3px) scale(0.92);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-8px) scale(1.06);
+    opacity: 0;
+  }
+}
+
+@keyframes mascotStrawberryIdle {
+  0%, 60%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-2px) rotate(-2deg);
+  }
+  40% {
+    transform: translateY(-0.5px) rotate(2deg);
+  }
+}
+
+@keyframes mascotStrawberryCelebrate {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3.5px) scale(1.04) rotate(-3.5deg);
+  }
+  50% {
+    transform: translateY(0px) scale(0.98) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2.5px) scale(1.03) rotate(3.5deg);
+  }
+}
+
+@keyframes mascotCatTail {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes mascotCatHead {
+  0%, 70%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes mascotCatBlink {
+  0%, 91%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.mascot-coffee-body {
+  transform-origin: 38px 50px;
+  animation: mascotCoffeeTilt 4.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.mascot-steam-1 {
+  animation: mascotSteamRise 2.8s ease-in-out infinite;
+}
+
+.mascot-steam-2 {
+  animation: mascotSteamRise 2.8s ease-in-out 1.2s infinite;
+}
+
+.mascot-strawberry-idle {
+  transform-origin: center center;
+  animation: mascotStrawberryIdle 3.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.mascot-strawberry-celebrate {
+  transform-origin: center center;
+  animation: mascotStrawberryCelebrate 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.mascot-cat-float {
+  animation: mascotFloat 4.2s ease-in-out infinite;
+}
+
+@keyframes mascotCatIdle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  35% {
+    transform: translateY(-1.8px) rotate(-1.2deg);
+  }
+  70% {
+    transform: translateY(-0.5px) rotate(1.1deg);
+  }
+}
+
+.mascot-cat-idle {
+  transform-origin: center bottom;
+  animation: mascotCatIdle 4.8s ease-in-out infinite;
+}
+
+.mascot-cat-tail {
+  transform-origin: 51px 61px;
+  animation: mascotCatTail 2.6s ease-in-out infinite;
+}
+
+.mascot-cat-head {
+  transform-origin: 40px 42px;
+  animation: mascotCatHead 5.4s ease-in-out infinite;
+}
+
+.mascot-cat-eye-left {
+  transform-origin: 32.5px 34px;
+  animation: mascotCatBlink 4.6s ease-in-out infinite;
+}
+
+.mascot-cat-eye-right {
+  transform-origin: 47.5px 34px;
+  animation: mascotCatBlink 4.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

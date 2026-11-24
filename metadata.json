@@ -1,0 +1,6 @@
+{
+  "name": "My Tasks",
+  "description": "A cozy, aesthetic, and fully functional to-do list, weekly planner, calendar, and goals dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
